@@ -1,0 +1,6 @@
+<p> Here are your Gift Recipients, <%= @user.username %>
+<% @user.recipients.each do |recipient| %>
+  <ul>
+    <li><a href="/recipients/<%=recipient.id%>"><%= recipient.name %></a></li>
+  </ul>
+<% end %>
