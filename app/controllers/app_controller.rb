@@ -1,4 +1,4 @@
-require '.config/env'
+require './config/env'
 
 class AppController < Sinatra::Base
 
@@ -6,7 +6,7 @@ class AppController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :sessions_secret, "giftsforall"
+    set :session_secret, "giftsforall"
   end
 
   get '/' do
