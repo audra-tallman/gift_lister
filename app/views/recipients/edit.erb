@@ -1,0 +1,9 @@
+<h1>Edit <%= @recipient.name %></h1>
+
+<form action="/recipients/<%=@recipient.id %>" method="POST">
+  <label> Recipient Name </label>
+  <input type="text" name="name" value="<%=@recipient.name %>">
+  <br>
+
+  <input type="submit" value="Update">
+</form>
