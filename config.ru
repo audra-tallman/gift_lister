@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride
 use Rack::Session::Cookie
+use GiftsController
 use RecipientsController
 use UsersController
 run AppController
