@@ -1,0 +1,11 @@
+<%= @recipient.name %><br />
+
+<h2>Gifts</h2>
+<ul>
+<% @recipient.gifts.each do |gift| %>
+  <li><a href="//<%=gifts.id%>"><%= gift.name %></a></li>
+<% end%>
+</ul>
+<a href="/recipients/<%=@recipient.id%>/edit">Edit</a>
+<br />
+<br />

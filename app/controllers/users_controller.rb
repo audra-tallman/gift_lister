@@ -13,6 +13,7 @@ class UsersController < AppController
      end
    end
 
+#Signup
   get '/signup' do
     if !session[:user_id]
       erb :'users/new'
@@ -31,12 +32,14 @@ class UsersController < AppController
     end
   end
 
+#Login
   get '/login' do
     @error_message = params[:error]
     if !session[:user_id]
       erb :'users/login'
     else
       redirect to '/login'
+    end
   end
 
   post '/login' do
@@ -49,6 +52,7 @@ class UsersController < AppController
     end
   end
 
+#Logout
   get '/logout' do
     if session[:user_id] != nil
       session.destroy

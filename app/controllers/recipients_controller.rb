@@ -11,7 +11,7 @@ class RecipientsController < AppController
    get '/recipients/new' do
      redirect_if_not_logged_in
      @error_message = params[:error]
-     erb :'recipeints/new'
+     erb :'recipients/new'
    end
 
    post '/recipients' do
@@ -28,13 +28,13 @@ class RecipientsController < AppController
    get '/recipients/:id/edit' do
      redirect_if_not_logged_in
      @error_message = params[:error]
-     @recipeients = Recipient.find(params[:id])
-     erb :'recipeients/edit'
+     @recipients = Recipient.find(params[:id])
+     erb :'recipients/edit'
    end
 
    post '/recipients:id' do
     redirect_if_not_logged_in
-    @recipeients = Recipient.find(params[:id])
+    @recipients = Recipient.find(params[:id])
     unless Recipient.valid_params?(params)
       redirect "/recipients/#{@recipient.id}/edit?error=invalid recipeient"
     end
@@ -43,11 +43,11 @@ class RecipientsController < AppController
   end
 
 #Read
-  get '/recipents/:id' do
+  get '/recipients/:id' do
     redirect_if_not_logged_in
     @recipient = Recipient.find(params[:id])
-    erb :'recipeints/show'
-
+    erb :'recipients/show'
+  end
 
 
 end

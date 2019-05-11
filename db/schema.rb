@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_195157) do
+ActiveRecord::Schema.define(version: 2019_05_11_214352) do
+
+  create_table "gifts", force: :cascade do |t|
+    t.string "name"
+    t.integer "recipient_id"
+  end
 
   create_table "recipents", force: :cascade do |t|
     t.string "name"
@@ -18,7 +23,8 @@ ActiveRecord::Schema.define(version: 2019_05_11_195157) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
