@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < AppController
 
   get 'users/:id' do

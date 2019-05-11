@@ -1,4 +1,4 @@
-class GiftsController < ApplicationController
+class GiftsController < AppController
 
 #Read
   get '/gifts' do
