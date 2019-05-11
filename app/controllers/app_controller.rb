@@ -10,7 +10,9 @@ class AppController < Sinatra::Base
   end
 
   get '/' do
-    "Welcome to Gift Lister!"
+    erb :index
+    #"Welcome to Gift Lister!"
   end
 
+  
 end
