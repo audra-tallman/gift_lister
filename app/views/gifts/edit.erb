@@ -1,0 +1,9 @@
+<h1>Edit <%= @gift.name %></h1>
+
+<form action="/gifts/<%=@gift.id %>" method="POST">
+  <label> Gift </label>
+  <input type="text" name="name" value="<%=@gift.name %>"> <br>
+
+
+  <input type="submit" value="Update">
+</form>
