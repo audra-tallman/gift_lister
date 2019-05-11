@@ -7,4 +7,5 @@ end
 use Rack::MethodOverride
 use Rack::Session::Cookie
 use RecipientsController
+use UsersController
 run AppController
