@@ -1,6 +1,6 @@
-<%= @recipient.name %><br />
+<h1><%= @recipient.name %></h1><br>
 
-<h2>Gifts</h2>
+<h3>Gifts</h3>
 <ul>
 <% @recipient.gifts.each do |gift| %>
   <li><a href="//<%=gifts.id%>"><%= gift.name %></a></li>

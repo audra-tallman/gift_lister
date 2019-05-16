@@ -1,6 +1,12 @@
+<h1> This is your recipients page.</h1>
+
+
 <% @recipients.each do |recipient| %>
   <%= recipient.name %><br>
   <a href="/recipient/<%=recipient.id%>/edit">Edit</a>
   <br>
   <br>
+
 <% end %>
+
+<h4><a href="/recipients/new">New Recipient</a></h4>
