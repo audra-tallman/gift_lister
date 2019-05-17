@@ -2,8 +2,12 @@
 
 <form action="/recipient/<%=@recipient.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <label> Recipient Name </label>
+  <label> Recipient Name: </label>
   <input type="text" name="name" value="<%=@recipient.name %>">
+  <br>
+
+  <label> Gift Ideas: </label>
+  <input type="text" name="gifts" value="<%=@recipient.gifts %>">
   <br>
 
   <input type="submit" value="Update">

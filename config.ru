@@ -5,7 +5,6 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use Rack::MethodOverride
-use GiftsController
 use RecipientsController
 use UsersController
 run AppController

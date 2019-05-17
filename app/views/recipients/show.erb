@@ -1,10 +1,11 @@
-<h1><%= @recipient.name %></h1><br>
+<h3>Gift Recipient: </h3>
 
-<h3>Gifts</h3>
-<ul>
-<% @recipient.gifts.each do |gift| %>
-  <li><a href="//<%=gifts.id%>"><%= gift.name %></a></li>
-<% end%>
-</ul>
-<a href="/recipients/<%=@recipient.id%>/edit">Edit</a>
-<br>
+<p><%= @recipient.name %></p><br>
+
+<h3>Gifts Ideas:</h3>
+<p><%= @recipient.gifts%> </p>
+
+<form method="POST" action="/recipient/<%=@recipient.id%>">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="Delete Gift Recipient" />
+</form>
