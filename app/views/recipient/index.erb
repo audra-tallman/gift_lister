@@ -1,0 +1,17 @@
+<nav>
+  <a href="/logout">Logout</a>
+</nav>
+
+<h3>Your Gift Recipients:</h3>
+
+
+<% @current_user.recipients.each do |recipient| %>
+  <h4><%= recipient.name %></h4>
+  <p><%=recipient.gifts %></p><br>
+  <a href="/recipient/<%=recipient.id%>/edit">Edit</a>
+  <br>
+  <br>
+
+<% end %>
+
+<h4><a href="/recipient/new">New Recipient</a></h4>

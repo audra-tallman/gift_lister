@@ -1,14 +1,14 @@
+<nav>
+  <a href="/logout">Logout</a>
+</nav>
+
 <h1> Hello, <%= @user.username %>!</h1>
 
 <h3> Your current gift recipients:</h3>
 
-<% @user.recipients.each do |recipient| %>
-  <ul>
-    <li><a href="/recipients/<%=recipient.id%>"><%= recipient.name %></a>
-        Gifts: <%= recipient.gifts %>
-    </li>
+<% @current_user.recipients.each do |recipient| %>
+  <h3><%= recipient.name %></h3>
+  <% end %>
 
-    <% end %>
-  </ul>
 
-<a href="/recipient/new">New Recipient</a></h4>
+<h4><a href="/recipient">Make Changes</a></h4>

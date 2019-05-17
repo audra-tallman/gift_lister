@@ -1,0 +1,26 @@
+<nav>
+  <a href="/logout">Logout</a>
+</nav>
+
+<h3>Make Changes for:</h3>
+
+<h3> <%= @recipient.name %></h3><br>
+
+<form action="/recipient/<%=@recipient.id %>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <div><label> Recipient Name: </label><br>
+  <input type="text" name="name" value="<%=@recipient.name %>">
+  <br>
+  <br>
+  <label> Gift Ideas: </label><br>
+  <input type="text" name="gifts" value="<%=@recipient.gifts %>">
+  <br>
+  <br>
+  </div>
+  <input type="submit" value="Update">
+</form>
+
+  <form method="POST" action="/recipient/<%=@recipient.id%>">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Delete Recipient" />
+  </form>

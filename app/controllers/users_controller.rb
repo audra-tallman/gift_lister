@@ -2,9 +2,16 @@ require 'pry'
 class UsersController < AppController
 
   get '/account' do
-    @user = User.find(session[:user_id])
-      erb :'users/show'
+    if !logged_in?
+      redirect to '/'
     end
+    @user = User.find(session[:user_id])
+    if @user == current_user
+      erb :'users/show'
+    else
+      redirect to '/'
+    end
+  end
 
 
 #Signup
@@ -16,7 +23,7 @@ class UsersController < AppController
     if params[:username] == "" || params[:password] == ""
       redirect to '/signup'
     else
-      @user = User.create(:username => params[:username], :password =>[:password])
+      @user = User.create(:username => params[:username], :password => params[:password])
       session[:user_id] = @user.id
       redirect to '/account'
     end
@@ -24,14 +31,13 @@ class UsersController < AppController
 
 #Login
   get '/login' do
-    erb :'users/login'
+      erb :'users/login'
   end
 
   post '/login' do
     user = User.find_by(:username => params[:username])
-    binding.pry
     if user && user.authenticate(params[:password])
-      session[:user_id] = @user.id
+      session[:user_id] = user.id
       redirect to '/account'
     else
       redirect to '/failure'
