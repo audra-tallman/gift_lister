@@ -22,6 +22,10 @@ class AppController < Sinatra::Base
      def logged_in?
        !!session[:user_id]
      end
+
+     def redirect_if_not_allowed(recipient)
+       current_user.id == recipient.user_id
+     end
    end
 
  end
