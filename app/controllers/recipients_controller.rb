@@ -13,9 +13,6 @@ class RecipientsController < AppController
 
 #Loads New Recipient Form Page
   get '/recipient/new' do
-    if redirect_if_not_allowed(recipient)
-      redirect to '/recipient'
-    end
     if logged_in?
       erb :'recipient/new'
     else
